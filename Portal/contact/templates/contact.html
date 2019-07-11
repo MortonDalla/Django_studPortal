@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1> {{ tittle }} </h1>
+
+{% if confirm_message %}
+<p>{{ confirm_message }}</p>
+{% endif %}
+
+{% if form %}
+<form method='POST' action=''>{% csrf_token %}
+    {{ form.as_p }}
+<input type='submit' value='submit form' class='btn btn-default' >
+</form>
+{% endif %}
+{% endblock %}
